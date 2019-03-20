@@ -33,7 +33,7 @@ export const getUserPolls = () => {
             dispatch(removeError());
         } catch (err) {
             const error = err.response.data;
-            dispatch(addError(error));
+            dispatch(addError(error.message));
         }
     }
 };
@@ -46,7 +46,7 @@ export const createPoll = data => {
           dispatch(removeError());
       } catch (err) {
           const error = err.response.data;
-          dispatch(addError(error));
+          dispatch(addError(error.message));
       }
   }
 };
